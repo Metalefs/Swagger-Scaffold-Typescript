@@ -341,7 +341,7 @@ class SwaggerParser {
                     const isRef = schema.$ref||schema.items?.$ref;
                     let body = endpoint.requestBody;
 
-                    if (isRef) {
+                    if (isRef && !isArray) {
                         body = `extends ${body} {}`
                     }
 
@@ -364,7 +364,7 @@ class SwaggerParser {
                     const isRef = schema.$ref||schema.items?.$ref;
                     let body = endpoint.responseBody;
 
-                    if (isRef) {
+                    if (isRef && !isArray) {
                         body = `extends ${body} {}`
                     }
 
