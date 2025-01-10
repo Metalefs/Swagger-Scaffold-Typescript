@@ -7,7 +7,7 @@
 - 🔄 **Generate Folder Structures**: Automatically creates folder structures based on your Swagger API definitions.
 - 📄 **Request/Response File Creation**: Generates request and response files for each API endpoint.
 - 🌐 **Swagger Integration**: Fetches API routes directly from a Swagger (OpenAPI) address and translates them into code.
-- 🛠 **Customizable Templates**: Generates a `template.json` file to customize the structure and content of the generated files.
+- 🛠 **Customizable Templates**: Generates a template file to customize the structure and content of the generated files.
 - 🚀 **Fast and Easy Setup**: Quickly scaffold your projects without manually writing boilerplate code.
 
 ## Installation
