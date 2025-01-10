@@ -19,14 +19,40 @@
 
 ## Usage
 
+# Generating base structure
+
 1. **Open Command Palette** (`Ctrl + Shift + P` or `Cmd + Shift + P` on macOS).
 2. Search for `SwaggerScaffold: Generate API Structure`.
 3. Enter the Swagger (OpenAPI) URL.
-4. The extension will generate folder structures and request/response files automatically based on the provided Swagger address.
+4. The extension will generate directory structure and template files automatically based on the provided Swagger address.
 
-Here’s an expanded version of the **Configuration** section, explaining how to configure file name casing, change the prefix per HTTP method, and adjust the file extension, with an example of the JSON configuration file:
+# Scaffolding files
 
+1. **Open Command Palette** (`Ctrl + Shift + P` or `Cmd + Shift + P` on macOS).
+2. Search for `SwaggerScaffold: Process Folder Structure`.
+3. Select the desired output folder.
+4. The extension will generate folder structures and request/response files automatically based on the provided structure and template files generated in the workspace root path.
 ---
+
+### Review & Finalize Scaffolded Files
+
+1. After the initial generation, **analyze the scaffolded files** to ensure they meet your project’s requirements.
+2. **move the generated `swaggerstruct-generated-templates.json` file** to the correct directory where you want the scaffolded files to be applied.
+3. Once you’ve made any necessary adjustments, open `swaggerstruct-generated-folder-structure.yaml` then **run the command** `Process Folder Structure` from the Command Palette to ensure the files are scaffolded correctly.
+
+
+## Example
+
+Given a Swagger URL, SwaggerStruct will generate:
+
+- `/users/`  
+  - `GetUserRequest.ts`
+  - `GetUserResponse.ts`
+  
+- `/posts/`  
+  - `CreatePostRequest.ts`
+  - `CreatePostResponse.ts`
+ 
 
 ## Configuration
 
@@ -72,8 +98,6 @@ This allows you to control how request and response files are named according to
   - For **POST** requests, the prefix is `Create`. For `/posts`, the request file will be `CreatePostRequest.ts`.
   - **PUT** requests will have the prefix `Update`, and **DELETE** requests will have the prefix `Delete`.
 
-- **File Extension**: The generated files will use the `.ts` extension. You can change this to `.js`, `.json`, or any other extension if your project uses a different file type.
-
 ### How it Works
 
 When you run the SwaggerStruct command with this configuration:
@@ -115,24 +139,7 @@ To customize file generation, change the generated `swaggerstruct-generated-temp
 }
 ```
 
-### Review & Finalize Scaffolded Files
 
-1. After the initial generation, **analyze the scaffolded files** to ensure they meet your project’s requirements.
-2. **move the generated `swaggerstruct-generated-templates.json` file** to the correct directory where you want the scaffolded files to be applied.
-3. Once you’ve made any necessary adjustments, open `swaggerstruct-generated-folder-structure.yaml` then **run the command** `Process Folder Structure` from the Command Palette to ensure the files are scaffolded correctly.
-
-
-## Example
-
-Given a Swagger URL, SwaggerStruct will generate:
-
-- `/api/v1/users/`  
-  - `GetUserRequest.ts`
-  - `GetUserResponse.ts`
-  
-- `/api/v1/posts/`  
-  - `CreatePostRequest.ts`
-  - `CreatePostResponse.ts`
 
 ## Contribution
 
