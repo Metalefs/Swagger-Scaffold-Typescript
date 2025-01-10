@@ -1,0 +1,10 @@
+{
+    "fileNameCasing": "KebabCase",
+    "methodPrefixes": {
+      "GET": "get",
+      "POST": "create",
+      "PUT": "update",
+      "PATCH": "patch",
+      "DELETE": "delete"
+    }
+}

@@ -1,0 +1,7 @@
+node_modules
+.vscode-test/
+*.vsix
+./dtos
+./interfaces
+swaggerstruct-generated-folder-structure.yaml
+swaggerstruct-generated-templates.json
