@@ -5,7 +5,24 @@ const path = require("path");
 function activate(context) {      
   let workspaceFolder = vscode.workspace.workspaceFolders?.[0];
   const workspacePath = workspaceFolder.uri.fsPath;
-  const config = require(path.join(workspacePath, '/swaggerstruct.config.json'));
+  let config = {};
+
+  try{
+    config = require(path.join(workspacePath, '/swaggerstruct.config.json'))
+  }
+  catch(ex){
+    config = {
+      fileNameCasing: "KebabCase",
+      separateFoldersRequestAndResponse: true,
+      methodPrefixes: {
+        GET: "get",
+        POST: "create",
+        PUT: "update",
+        PATCH: "patch",
+        DELETE: "delete"
+      }
+    }
+  }
 
   let scrapeSwaggerCommand = vscode.commands.registerCommand("extension.swaggerScaffold", async function () {    
     // Get the workspace folder

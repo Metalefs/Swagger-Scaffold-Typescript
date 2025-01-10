@@ -85,7 +85,7 @@ class SwaggerParser {
         }
     
         // Create the output in the desired format
-        const organized = this.organizeEndpoints(endpoints);
+        const organized = this.organizeEndpoints(endpoints);    
         const folderPattern = this.createFolderPattern(organized);
         const templatePattern = this.createTemplatePattern(organized);
     
@@ -291,23 +291,42 @@ class SwaggerParser {
     
     createFolderPattern(organized) {
         let pattern = '';
-        
+        let requestsPattern = 'request/\n';
+        let responsesPattern = 'response/\n';
+
         for (const [folder, endpoints] of Object.entries(organized)) {
-            pattern += `${folder}/\n`;
-            
+            pattern += `${folder}/\n`;            
+            if(this.config.separateFoldersRequestAndResponse){
+                requestsPattern += `    ${folder}/\n`;
+                responsesPattern += `    ${folder}/\n`;
+            }
+
             endpoints.forEach(endpoint => {
                 if(endpoint.requestBody){
                     pattern += `    #${endpoint.method} - ${endpoint.path} - ${endpoint.summary.replace(/(\r\n|\n|\r)/gm, "")}\n`;
                     pattern += `    ${endpoint.safeName}.request.ts\\${endpoint.method}-${endpoint.path}\n`;
+
+                     if(this.config.separateFoldersRequestAndResponse){
+                        requestsPattern += `    #${endpoint.method} - ${endpoint.path} - ${endpoint.summary.replace(/(\r\n|\n|\r)/gm, "")}\n`;
+                        requestsPattern += `    ${endpoint.safeName}.request.ts\\${endpoint.method}-${endpoint.path}\n`;
+                    }
                 }
                 if(endpoint.responseBody){
                     pattern += `    #${endpoint.method} - ${endpoint.path} - ${endpoint.summary.replace(/(\r\n|\n|\r)/gm, "")}\n`;
                     pattern += `    ${endpoint.safeName}.response.ts\\${endpoint.method}-${endpoint.path}\n`;
+
+                     if(this.config.separateFoldersRequestAndResponse){
+                        responsesPattern += `    #${endpoint.method} - ${endpoint.path} - ${endpoint.summary.replace(/(\r\n|\n|\r)/gm, "")}\n`;
+                        responsesPattern += `    ${endpoint.safeName}.response.ts\\${endpoint.method}-${endpoint.path}\n`;
+                    }
                 }
             });
         }
     
-        return pattern;
+        if(this.config.separateFoldersRequestAndResponse){
+            return `${requestsPattern}${responsesPattern}`
+        }
+        else return pattern;
     }    
     
     createTemplatePattern(organized) {
