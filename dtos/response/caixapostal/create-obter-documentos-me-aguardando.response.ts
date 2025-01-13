@@ -1,2 +1,0 @@
-import { CaixaPostalFiltroPaginacaoConsultaCaixaPostal } from "../../interfaces/CaixaPostalFiltroPaginacaoConsultaCaixaPostal";
-export interface CreateObterDocumentosMeAguardandoReponseDto extends CaixaPostalFiltroPaginacaoConsultaCaixaPostal {}

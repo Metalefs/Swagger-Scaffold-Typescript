@@ -1,2 +1,0 @@
-import { PlanosDisponiveisParaCompraSaidaDto } from '../../interfaces/PlanosDisponiveisParaCompraSaidaDto';
-export type GetObterPlanosDisponiveisParaCompraReponseDto = PlanosDisponiveisParaCompraSaidaDto[];

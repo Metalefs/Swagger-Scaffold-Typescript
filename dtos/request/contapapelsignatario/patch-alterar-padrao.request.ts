@@ -1,2 +1,0 @@
-import { AlterarPadraoPapelSignatarioEntradaDto } from "../../interfaces/AlterarPadraoPapelSignatarioEntradaDto";
-export interface PatchAlterarPadraoRequestDto extends AlterarPadraoPapelSignatarioEntradaDto {}

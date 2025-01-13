@@ -1,2 +1,0 @@
-import { AlterarContaPapelSignatarioEntradaDto } from "../../interfaces/AlterarContaPapelSignatarioEntradaDto";
-export interface UpdateContapapelsignatarioByIdReponseDto extends AlterarContaPapelSignatarioEntradaDto {}

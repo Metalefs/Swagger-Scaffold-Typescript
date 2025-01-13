@@ -1,2 +1,0 @@
-import { ProcessoStatusSaidaDto } from "../../interfaces/ProcessoStatusSaidaDto";
-export interface GetObterStatusProcessoByIdProcessoByIdDestinatarioByRetornarExcluidosReponseDto extends ProcessoStatusSaidaDto {}

@@ -1,2 +1,0 @@
-import { ProcessoDestinatarioInfCompTipoDadosIndentificadorSaidaDto } from '../../interfaces/ProcessoDestinatarioInfCompTipoDadosIndentificadorSaidaDto';
-export type GetObterTiposDadosIdentificadorReponseDto = ProcessoDestinatarioInfCompTipoDadosIndentificadorSaidaDto[];

@@ -1,2 +1,0 @@
-import { UsuarioContaFiltroPaginacaoConsultaUsuarioConta } from "../../interfaces/UsuarioContaFiltroPaginacaoConsultaUsuarioConta";
-export interface CreateObterUsuariosDaContaReponseDto extends UsuarioContaFiltroPaginacaoConsultaUsuarioConta {}

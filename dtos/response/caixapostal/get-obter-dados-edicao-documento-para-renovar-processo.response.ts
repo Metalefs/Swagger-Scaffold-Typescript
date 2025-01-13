@@ -1,2 +1,0 @@
-import { DadosProcessoEdicaoRenovarSaidaDto } from "../../interfaces/DadosProcessoEdicaoRenovarSaidaDto";
-export interface GetObterDadosEdicaoDocumentoParaRenovarProcessoReponseDto extends DadosProcessoEdicaoRenovarSaidaDto {}

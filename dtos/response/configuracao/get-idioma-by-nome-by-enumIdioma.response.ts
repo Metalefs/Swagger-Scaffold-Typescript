@@ -1,2 +1,0 @@
-import { ParametrosGeraisMultiIdiomaResumidoSaidaDto } from "../../interfaces/ParametrosGeraisMultiIdiomaResumidoSaidaDto";
-export interface GetIdiomaByNomeByEnumIdiomaReponseDto extends ParametrosGeraisMultiIdiomaResumidoSaidaDto {}

@@ -1,2 +1,0 @@
-import { ReenviarEmailContaPagaTokenVencidoEntradaDto } from "../../interfaces/ReenviarEmailContaPagaTokenVencidoEntradaDto";
-export interface CreateReenviarEmailTokenVencidoReponseDto extends ReenviarEmailContaPagaTokenVencidoEntradaDto {}

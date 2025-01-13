@@ -1,2 +1,0 @@
-import { ContaChavesAPImanagementSaidaDto } from "../../interfaces/ContaChavesAPImanagementSaidaDto";
-export interface PatchGerarChavesApiManagenementByEnumChavesAPImanagementReponseDto extends ContaChavesAPImanagementSaidaDto {}

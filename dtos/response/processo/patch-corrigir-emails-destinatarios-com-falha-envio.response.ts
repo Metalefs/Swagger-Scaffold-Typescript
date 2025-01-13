@@ -1,2 +1,0 @@
-import { CorrigirProcessoDestinatarioEntradaDto } from '../../interfaces/CorrigirProcessoDestinatarioEntradaDto';
-export type PatchCorrigirEmailsDestinatariosComFalhaEnvioReponseDto = CorrigirProcessoDestinatarioEntradaDto[];

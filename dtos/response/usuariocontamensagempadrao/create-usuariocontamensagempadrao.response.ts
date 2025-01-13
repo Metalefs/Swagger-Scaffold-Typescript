@@ -1,2 +1,0 @@
-import { AdicionarMensagemPadraoEntradaDto } from "../../interfaces/AdicionarMensagemPadraoEntradaDto";
-export interface CreateUsuariocontamensagempadraoReponseDto extends AdicionarMensagemPadraoEntradaDto {}

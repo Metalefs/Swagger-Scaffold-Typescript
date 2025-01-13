@@ -1,2 +1,0 @@
-import { ValidarConviteAssociacaoEntradaDto } from "../../interfaces/ValidarConviteAssociacaoEntradaDto";
-export interface CreateValidarConviteAssociacaoReponseDto extends ValidarConviteAssociacaoEntradaDto {}

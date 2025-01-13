@@ -1,2 +1,0 @@
-import { DadosDocumentoProcessoEntradaDto } from "../../interfaces/DadosDocumentoProcessoEntradaDto";
-export interface CreateRenovarBloqueioDocumentoRequestDto extends DadosDocumentoProcessoEntradaDto {}

@@ -1,2 +1,0 @@
-import { DadosIniciaisProcessoEntradaDto } from "../../interfaces/DadosIniciaisProcessoEntradaDto";
-export interface PatchObterDadosIniciaisProcessoRequestDto extends DadosIniciaisProcessoEntradaDto {}

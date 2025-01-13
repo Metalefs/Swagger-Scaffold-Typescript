@@ -1,2 +1,0 @@
-import { DestinatarioDocumentosAssinaturaSaida } from '../../interfaces/DestinatarioDocumentosAssinaturaSaida';
-export type GetObterDocumentosAssinaturaReponseDto = DestinatarioDocumentosAssinaturaSaida[];

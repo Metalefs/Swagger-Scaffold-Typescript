@@ -1,2 +1,0 @@
-import { DadosTransferenciaDeDocumentosSaidaDto } from "../../interfaces/DadosTransferenciaDeDocumentosSaidaDto";
-export interface GetObterTransferenciaDocumentosReponseDto extends DadosTransferenciaDeDocumentosSaidaDto {}

@@ -1,2 +1,0 @@
-import { TermoAceiteDestinatarioEntradaDto } from "../../interfaces/TermoAceiteDestinatarioEntradaDto";
-export interface CreateAdicionarTermoDestinatárioRequestDto extends TermoAceiteDestinatarioEntradaDto {}

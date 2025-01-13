@@ -1,2 +1,0 @@
-import { HistoricoDocumentoSaidaDto } from "../../interfaces/HistoricoDocumentoSaidaDto";
-export interface GetHistoricoDocumentoByIdProcessoByRetornarExcluidosReponseDto extends HistoricoDocumentoSaidaDto {}

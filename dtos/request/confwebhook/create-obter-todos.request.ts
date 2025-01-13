@@ -1,2 +1,0 @@
-import { ConfWebHookFiltroDtoPaginacaoConsultaConfWebHook } from "../../interfaces/ConfWebHookFiltroDtoPaginacaoConsultaConfWebHook";
-export interface CreateObterTodosRequestDto extends ConfWebHookFiltroDtoPaginacaoConsultaConfWebHook {}

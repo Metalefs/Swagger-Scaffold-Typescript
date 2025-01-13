@@ -1,2 +1,0 @@
-import { PaginacaoConsultaAssinaturaEmLote } from "../../interfaces/PaginacaoConsultaAssinaturaEmLote";
-export interface CreateObterDocumentosAssinarEmLoteRequestDto extends PaginacaoConsultaAssinaturaEmLote {}

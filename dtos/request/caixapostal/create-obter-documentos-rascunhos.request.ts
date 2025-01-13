@@ -1,2 +1,0 @@
-import { CaixaPostalRascunhoFiltroPaginacaoConsultaCaixaPostal } from "../../interfaces/CaixaPostalRascunhoFiltroPaginacaoConsultaCaixaPostal";
-export interface CreateObterDocumentosRascunhosRequestDto extends CaixaPostalRascunhoFiltroPaginacaoConsultaCaixaPostal {}
