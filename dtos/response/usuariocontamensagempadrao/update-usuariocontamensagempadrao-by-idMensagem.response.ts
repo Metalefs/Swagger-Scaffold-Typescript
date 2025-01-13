@@ -1,0 +1,2 @@
+import { AlterarMensagemPadraoEntradaDto } from "../../interfaces/AlterarMensagemPadraoEntradaDto";
+export interface UpdateUsuariocontamensagempadraoByIdMensagemReponseDto extends AlterarMensagemPadraoEntradaDto {}

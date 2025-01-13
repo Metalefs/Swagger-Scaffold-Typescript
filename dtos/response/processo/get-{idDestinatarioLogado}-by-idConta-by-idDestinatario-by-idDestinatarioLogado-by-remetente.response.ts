@@ -1,0 +1,2 @@
+import { AnexoDestinatarioSaidaDto } from "../../interfaces/AnexoDestinatarioSaidaDto";
+export interface Get-{idDestinatarioLogado}ByIdContaByIdDestinatarioByIdDestinatarioLogadoByRemetenteReponseDto extends AnexoDestinatarioSaidaDto {}

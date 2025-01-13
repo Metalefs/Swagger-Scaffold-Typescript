@@ -1,0 +1,2 @@
+import { DadosProcessoCompartilhadoSaidaDto } from "../../interfaces/DadosProcessoCompartilhadoSaidaDto";
+export interface GetVisualizarProcessoCompartilhadoByIdTokenReponseDto extends DadosProcessoCompartilhadoSaidaDto {}

@@ -1,0 +1,2 @@
+import { DadosProcessoAssinadoPeloDestinatarioSaidaDto } from "../../interfaces/DadosProcessoAssinadoPeloDestinatarioSaidaDto";
+export interface GetObterDadosProcessoAssinadoByIdProcessoByIdProcessoDestinatarioByRetornarExcluidosReponseDto extends DadosProcessoAssinadoPeloDestinatarioSaidaDto {}

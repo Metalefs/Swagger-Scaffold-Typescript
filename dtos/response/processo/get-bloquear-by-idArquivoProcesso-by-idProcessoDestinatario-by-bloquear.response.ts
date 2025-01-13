@@ -1,0 +1,2 @@
+import { DadosProcessoComRepresentacaoVisualSaidaDto } from "../../interfaces/DadosProcessoComRepresentacaoVisualSaidaDto";
+export interface GetBloquearByIdArquivoProcessoByIdProcessoDestinatarioByBloquearReponseDto extends DadosProcessoComRepresentacaoVisualSaidaDto {}

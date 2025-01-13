@@ -1,0 +1,2 @@
+import { ContaExisteChavesAutenticacaoSaidaDto } from "../../interfaces/ContaExisteChavesAutenticacaoSaidaDto";
+export interface GetVerificarExisteChavesAutenticacaoReponseDto extends ContaExisteChavesAutenticacaoSaidaDto {}

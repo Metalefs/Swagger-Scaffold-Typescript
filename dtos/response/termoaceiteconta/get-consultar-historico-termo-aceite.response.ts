@@ -1,0 +1,2 @@
+import { HistoricoTermoAceiteDestinatarioSaidaDtoArrayDadosResultadoSaidaDto } from "../../interfaces/HistoricoTermoAceiteDestinatarioSaidaDtoArrayDadosResultadoSaidaDto";
+export interface GetConsultarHistoricoTermoAceiteReponseDto extends HistoricoTermoAceiteDestinatarioSaidaDtoArrayDadosResultadoSaidaDto {}

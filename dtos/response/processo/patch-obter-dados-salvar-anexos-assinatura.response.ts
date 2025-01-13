@@ -1,0 +1,2 @@
+import { DadosSalvarAnexosAssinaturaProcessoEntradaDto } from '../../interfaces/DadosSalvarAnexosAssinaturaProcessoEntradaDto';
+export type PatchObterDadosSalvarAnexosAssinaturaReponseDto = DadosSalvarAnexosAssinaturaProcessoEntradaDto[];

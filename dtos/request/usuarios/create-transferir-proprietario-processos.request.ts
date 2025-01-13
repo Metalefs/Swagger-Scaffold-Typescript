@@ -1,0 +1,2 @@
+import { IncluirTransferenciaProprietarioEntradaDto } from "../../interfaces/IncluirTransferenciaProprietarioEntradaDto";
+export interface CreateTransferirProprietarioProcessosRequestDto extends IncluirTransferenciaProprietarioEntradaDto {}

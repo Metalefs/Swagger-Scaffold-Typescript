@@ -1,0 +1,2 @@
+import { HistoricoDocumentoSaidaDto } from "../../interfaces/HistoricoDocumentoSaidaDto";
+export interface GetAcessarHistoricoDocumentoByIdProcessoByRetornarExcluidosReponseDto extends HistoricoDocumentoSaidaDto {}

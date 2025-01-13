@@ -307,8 +307,8 @@ class SwaggerParser {
                     pattern += `    ${endpoint.safeName}.request.ts\\${endpoint.method}-${endpoint.path}\n`;
 
                      if(this.config.separateFoldersRequestAndResponse){
-                        requestsPattern += `    #${endpoint.method} - ${endpoint.path} - ${endpoint.summary.replace(/(\r\n|\n|\r)/gm, "")}\n`;
-                        requestsPattern += `    ${endpoint.safeName}.request.ts\\${endpoint.method}-${endpoint.path}\n`;
+                        requestsPattern += `        #${endpoint.method} - ${endpoint.path} - ${endpoint.summary.replace(/(\r\n|\n|\r)/gm, "")}\n`;
+                        requestsPattern += `        ${endpoint.safeName}.request.ts\\${endpoint.method}-${endpoint.path}\n`;
                     }
                 }
                 if(endpoint.responseBody){
@@ -316,8 +316,8 @@ class SwaggerParser {
                     pattern += `    ${endpoint.safeName}.response.ts\\${endpoint.method}-${endpoint.path}\n`;
 
                      if(this.config.separateFoldersRequestAndResponse){
-                        responsesPattern += `    #${endpoint.method} - ${endpoint.path} - ${endpoint.summary.replace(/(\r\n|\n|\r)/gm, "")}\n`;
-                        responsesPattern += `    ${endpoint.safeName}.response.ts\\${endpoint.method}-${endpoint.path}\n`;
+                        responsesPattern += `        #${endpoint.method} - ${endpoint.path} - ${endpoint.summary.replace(/(\r\n|\n|\r)/gm, "")}\n`;
+                        responsesPattern += `        ${endpoint.safeName}.response.ts\\${endpoint.method}-${endpoint.path}\n`;
                     }
                 }
             });

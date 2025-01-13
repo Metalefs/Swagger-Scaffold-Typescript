@@ -1,0 +1,2 @@
+import { CaixaPostalEntradaFiltroPaginacaoConsultaCaixaPostal } from "../../interfaces/CaixaPostalEntradaFiltroPaginacaoConsultaCaixaPostal";
+export interface CreateObterDocumentosCaixaDeEntradaReponseDto extends CaixaPostalEntradaFiltroPaginacaoConsultaCaixaPostal {}

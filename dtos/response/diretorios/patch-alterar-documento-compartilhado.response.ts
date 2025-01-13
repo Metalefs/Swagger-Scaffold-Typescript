@@ -1,0 +1,2 @@
+import { AlterarArquivoProcessoTokenEntradaDto } from "../../interfaces/AlterarArquivoProcessoTokenEntradaDto";
+export interface PatchAlterarDocumentoCompartilhadoReponseDto extends AlterarArquivoProcessoTokenEntradaDto {}

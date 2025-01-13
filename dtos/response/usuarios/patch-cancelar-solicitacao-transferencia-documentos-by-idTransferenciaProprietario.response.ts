@@ -1,0 +1,2 @@
+import { DadosTransferenciaDeDocumentosSaidaDto } from "../../interfaces/DadosTransferenciaDeDocumentosSaidaDto";
+export interface PatchCancelarSolicitacaoTransferenciaDocumentosByIdTransferenciaProprietarioReponseDto extends DadosTransferenciaDeDocumentosSaidaDto {}

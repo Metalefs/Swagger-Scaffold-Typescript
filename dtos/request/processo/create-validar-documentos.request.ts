@@ -1,0 +1,2 @@
+import { ValidarDocumentosAssinaturaDestinatarioEntradaDto } from "../../interfaces/ValidarDocumentosAssinaturaDestinatarioEntradaDto";
+export interface CreateValidarDocumentosRequestDto extends ValidarDocumentosAssinaturaDestinatarioEntradaDto {}

@@ -1,0 +1,2 @@
+import { ParametrosGeraisResumidoSaidaDto } from "../../interfaces/ParametrosGeraisResumidoSaidaDto";
+export interface GetObterParametrosPeloNomeByNomeReponseDto extends ParametrosGeraisResumidoSaidaDto {}

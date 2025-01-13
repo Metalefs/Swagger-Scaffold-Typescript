@@ -1,0 +1,2 @@
+import { TermoAceiteDestinatarioEntradaDto } from "../../interfaces/TermoAceiteDestinatarioEntradaDto";
+export interface CreateAdicionarTermoDestinatárioReponseDto extends TermoAceiteDestinatarioEntradaDto {}

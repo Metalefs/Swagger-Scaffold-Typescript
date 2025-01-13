@@ -13,7 +13,7 @@ function activate(context) {
   catch(ex){
     config = {
       fileNameCasing: "KebabCase",
-      separateFoldersRequestAndResponse: true,
+      separateFoldersRequestAndResponse: false,
       methodPrefixes: {
         GET: "get",
         POST: "create",
@@ -133,7 +133,7 @@ function activate(context) {
     }
   });
 
-  context.subscriptions.push(generateCommand, processCommand, scrapeSwaggerCommand);
+  context.subscriptions.push(processCommand, scrapeSwaggerCommand);
 }
 
 function deactivate() {}

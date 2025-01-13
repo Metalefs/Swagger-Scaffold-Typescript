@@ -1,0 +1,2 @@
+import { TransferirProprietarioProcessosEntradaDto } from "../../interfaces/TransferirProprietarioProcessosEntradaDto";
+export interface PatchTransferirProprietarioProcessosRequestDto extends TransferirProprietarioProcessosEntradaDto {}

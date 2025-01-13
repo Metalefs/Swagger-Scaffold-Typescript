@@ -1,0 +1,2 @@
+import { UsuarioEstiloAssinaturaEntradaDto } from "../../interfaces/UsuarioEstiloAssinaturaEntradaDto";
+export interface PatchAlterarEstiloAssinaturaRequestDto extends UsuarioEstiloAssinaturaEntradaDto {}

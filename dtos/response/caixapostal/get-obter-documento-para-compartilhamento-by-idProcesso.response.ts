@@ -1,0 +1,2 @@
+import { DocumentoParaCompartilhamentoSaidaDto } from "../../interfaces/DocumentoParaCompartilhamentoSaidaDto";
+export interface GetObterDocumentoParaCompartilhamentoByIdProcessoReponseDto extends DocumentoParaCompartilhamentoSaidaDto {}

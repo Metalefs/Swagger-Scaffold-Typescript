@@ -1,0 +1,2 @@
+import { ContaGratuitaRegistroInicialEntradaDto } from "../../interfaces/ContaGratuitaRegistroInicialEntradaDto";
+export interface CreateIniciarRequestDto extends ContaGratuitaRegistroInicialEntradaDto {}

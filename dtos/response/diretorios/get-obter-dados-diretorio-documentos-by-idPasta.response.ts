@@ -1,0 +1,2 @@
+import { PastaConteudoSaidaDtoDadosResultadoSaidaDto } from "../../interfaces/PastaConteudoSaidaDtoDadosResultadoSaidaDto";
+export interface GetObterDadosDiretorioDocumentosByIdPastaReponseDto extends PastaConteudoSaidaDtoDadosResultadoSaidaDto {}

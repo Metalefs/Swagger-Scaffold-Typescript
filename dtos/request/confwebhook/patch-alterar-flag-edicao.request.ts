@@ -1,0 +1,2 @@
+import { AlterarFlagRegistroEmEdicaoEntradaDto } from "../../interfaces/AlterarFlagRegistroEmEdicaoEntradaDto";
+export interface PatchAlterarFlagEdicaoRequestDto extends AlterarFlagRegistroEmEdicaoEntradaDto {}

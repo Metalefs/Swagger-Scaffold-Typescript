@@ -1,0 +1,2 @@
+import { ConfiguracoesDocumentosEntradaDto } from "../../interfaces/ConfiguracoesDocumentosEntradaDto";
+export interface PatchAlterarConfiguracoesDocumentosReponseDto extends ConfiguracoesDocumentosEntradaDto {}
