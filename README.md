@@ -2,6 +2,8 @@
 
 **SwaggerScaffold** is a powerful VS Code extension that automates the generation of folder structures and request/response files from a Swagger (OpenAPI) address. This tool simplifies API integration by converting API definitions into code scaffolding, enabling developers to quickly start building around defined routes.
 
+### Warning: The command only works within an active workspace in VSCode
+
 ## Features
 
 - 🔄 **Generate Folder Structures**: Automatically creates folder structures based on your Swagger API definitions.
