@@ -335,7 +335,7 @@ class SwaggerParser {
 
                      if(this.config.separateFoldersRequestAndResponse){
                         requestsPattern += `        #${endpoint.method} - ${endpoint.path} - ${endpoint.summary.replace(/(\r\n|\n|\r)/gm, "")}\n`;
-                        requestsPattern += `        ${endpoint.safeName}.request.ts\\${endpoint.method}-${endpoint.path}\n`;
+                        requestsPattern += `        ${endpoint.safeName}.request.ts\\${endpoint.method}-request-${endpoint.path}\n`;
                     }
                 }
                 if(endpoint.responseBody){
@@ -344,7 +344,7 @@ class SwaggerParser {
 
                      if(this.config.separateFoldersRequestAndResponse){
                         responsesPattern += `        #${endpoint.method} - ${endpoint.path} - ${endpoint.summary.replace(/(\r\n|\n|\r)/gm, "")}\n`;
-                        responsesPattern += `        ${endpoint.safeName}.response.ts\\${endpoint.method}-${endpoint.path}\n`;
+                        responsesPattern += `        ${endpoint.safeName}.response.ts\\${endpoint.method}-response-${endpoint.path}\n`;
                     }
                 }
             });
@@ -364,7 +364,6 @@ class SwaggerParser {
         }
         for (const [folder, endpoints] of Object.entries(organized)) {            
             endpoints.forEach(endpoint => {
-                console.log(endpoint);
                 if(endpoint.requestBody) {
                     const isArray = endpoint.requestBody?.endsWith('[]');
                     const baseType = isArray ? endpoint.requestBody?.slice(0, -2) : endpoint.requestBody; 
@@ -379,7 +378,7 @@ class SwaggerParser {
                     customTemplates.push({
                         fileName: `${endpoint.safeName}.request.ts`,
                         body,
-                        match: `${endpoint.method.toLowerCase()}-${endpoint.path}`,
+                        match: `${endpoint.method.toLowerCase()}-request-${endpoint.path}`,
                         imports: isArray ? 
                             `import { ${baseType} } from '${rootPath}/interfaces/${baseType}';\n` : 
                             isRef ? `import { ${endpoint.requestBody} } from "${rootPath}/interfaces/${endpoint.requestBody}";\n` : '',
@@ -402,7 +401,7 @@ class SwaggerParser {
                     customTemplates.push({
                         fileName: `${endpoint.safeName}.response.ts`,
                         body,
-                        match: `${endpoint.method.toLowerCase()}-${endpoint.path}`,
+                        match: `${endpoint.method.toLowerCase()}-response-${endpoint.path}`,
                         imports: isArray ? 
                             `import { ${baseType} } from '${rootPath}/interfaces/${baseType}';\n` : 
                             isRef ? `import { ${endpoint.responseBody} } from "${rootPath}/interfaces/${endpoint.responseBody}";\n` : '',

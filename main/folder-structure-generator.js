@@ -42,7 +42,10 @@ class FolderStructureGenerator {
             const trimmedLine = line.trimStart();
             const depth = line.length - trimmedLine.length;
             const name = trimmedLine.replace(/\/$/g, "");
-            const [safeName, x, matchString] = name.split('\\');
+            const [safeName, matchString] = name.split('\\');
+            
+            console.log({BEFORESPLITCHAR:safeName, AFTERSPLITCHAR:matchString, FULLNAME:name, SPLIT:name.split('\\')})
+
             try {                
                 while (stack.length > 1 && stack[stack.length - 1].depth >= depth) {
                     stack.pop();
@@ -108,8 +111,8 @@ class FolderStructureGenerator {
 
     getTemplateMatch(template, safeName, matchString) {
         return template.customTemplates?.find(item => 
-            item.fileName.split('.')[0] === safeName.split('.')[0] || 
-            item.match.toLowerCase().trim() === matchString?.toLowerCase().trim()
+            item.fileName === safeName || 
+            item.match === matchString
         );
     }
 
