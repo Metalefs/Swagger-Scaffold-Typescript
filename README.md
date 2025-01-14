@@ -78,6 +78,7 @@ This allows you to control how request and response files are named according to
 ```json
 {
   "fileNameCasing": "KebabCase",
+  "separateFoldersRequestAndResponse": false,
   "methodPrefixes": {
     "GET": "get",
     "POST": "create",
