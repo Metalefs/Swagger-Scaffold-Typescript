@@ -153,13 +153,13 @@ class SwaggerParser {
     extractRequestSchema(details, swagger) {
         if(!details.requestBody) return null;
         const schema = details.requestBody?.content?.['application/json']?.schema;
-        return this.resolveSchema(schema, swagger) || '';
+        return this.resolveSchema(schema, swagger)[0] || '';
     }
     
     extractResponseSchema(details, swagger) {
         const successResponse = details.responses?.['200'] || details.responses?.['201'];
         const schema = successResponse?.content?.['application/json']?.schema;
-        return this.resolveSchema(schema, swagger) || '';
+        return this.resolveSchema(schema, swagger)[0] || '';
     }
 
     generateSchemaInterfaces(swagger) {
@@ -168,8 +168,8 @@ class SwaggerParser {
         if (swagger.components?.schemas) {
             for (const [name, schema] of Object.entries(swagger.components.schemas)) {
                 const interfaceImports = this.schemaImports(schema);
-                const interfaceDefinition = this.schemaToTypeScript(schema);
-                interfaces.set(name, {imports: interfaceImports, definition: interfaceDefinition});
+                const [interfaceDefinition, type] = this.schemaToTypeScript(schema);
+                interfaces.set(name, {imports: interfaceImports, definition: interfaceDefinition, type: type});
             }
         }
         
@@ -198,8 +198,13 @@ class SwaggerParser {
     }
 
     schemaToTypeScript(schema, swagger) {
-        if (!schema) return '';
+        if (!schema) return ['', 0];
         
+         // Handle enum with x-enumNames directly
+         if (schema.enum && schema['x-enumNames']) {
+            return [this.createEnumType(schema.enum, schema['x-enumNames']), 1];
+        }
+
         let result = '{\n';
         if (schema.properties) {
             for (const [prop, details] of Object.entries(schema.properties)) {
@@ -223,6 +228,22 @@ class SwaggerParser {
                 result += `  ${propertyName}: ${propertyType};\n`;
             }
         }
+        result += '}';
+        return [result, 0];
+    }
+
+    createEnumType(enumValues, enumNames) {
+       let result = '{\n';
+        // Create a union type of all possible values
+        enumValues.map((value, index) => {
+            // If the enum value is a number, we'll create a named enum-like type
+            if (typeof value === 'number') {
+                result += `    ${enumNames[index]} = ${value},\n`;
+            }
+            else {
+                result += `    '${value}',\n`;
+            }
+        }).join('');
         result += '}';
         return result;
     }
@@ -254,6 +275,12 @@ class SwaggerParser {
                 }
                 return 'string';
             case 'integer':
+                if (property.enum) {
+                    if (property['x-enumNames']) {
+                        return this.createEnumType(property.enum, property['x-enumNames']);
+                    }
+                    return property.enum.map(e => `'${e}'`).join(' | ');
+                }
             case 'number':
                 return 'number';
             case 'boolean':
@@ -333,10 +360,13 @@ class SwaggerParser {
         const customTemplates = [];
         
         for (const [folder, endpoints] of Object.entries(organized)) {
+
+            
             endpoints.forEach(endpoint => {
+                console.log(endpoint);
                 if(endpoint.requestBody) {
-                    const isArray = endpoint.requestBody.endsWith('[]');
-                    const baseType = isArray ? endpoint.requestBody.slice(0, -2) : endpoint.requestBody; 
+                    const isArray = endpoint.requestBody?.endsWith('[]');
+                    const baseType = isArray ? endpoint.requestBody?.slice(0, -2) : endpoint.requestBody; 
                     const schema = endpoint.operation?.requestBody?.content?.['application/json']?.schema;
                     const isRef = schema.$ref||schema.items?.$ref;
                     let body = endpoint.requestBody;
@@ -357,8 +387,8 @@ class SwaggerParser {
                 }
                 
                 if(endpoint.responseBody) {
-                    const isArray = endpoint.responseBody.endsWith('[]');
-                    const baseType = isArray ? endpoint.responseBody.slice(0, -2) : endpoint.responseBody;
+                    const isArray = endpoint.responseBody?.endsWith('[]');
+                    const baseType = isArray ? endpoint.responseBody?.slice(0, -2) : endpoint.responseBody;
                     const successResponse = endpoint.operation?.responses?.['200'] || endpoint.operation.responses?.['201'];
                     const schema = successResponse?.content?.['application/json']?.schema;
                     const isRef = schema.$ref||schema.items?.$ref;

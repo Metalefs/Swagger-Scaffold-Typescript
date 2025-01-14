@@ -76,7 +76,7 @@ function activate(context) {
       
       // Write each interface to a file
       for (const [name, details] of interfaces) {
-          const interfaceContent = `${details.imports}\nexport interface ${name} ${details.definition}`;
+          const interfaceContent = `${details.imports}\nexport ${(details.type === 0) ? 'interface' : 'enum'} ${name} ${details.definition}`;
           await vscode.workspace.fs.writeFile(
               vscode.Uri.file(path.join(interfacesDir, `${name}.ts`)),
               Buffer.from(interfaceContent)
