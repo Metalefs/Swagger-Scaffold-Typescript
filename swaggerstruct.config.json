@@ -1,6 +1,6 @@
 {
     "fileNameCasing": "KebabCase",
-    "separateFoldersRequestAndResponse": true,
+    "separateFoldersRequestAndResponse": false,
     "methodPrefixes": {
       "GET": "get",
       "POST": "create",

@@ -53,7 +53,8 @@ class FolderStructureGenerator {
     
                 let replacedName = safeName;
                 template.useFileName?.replacements?.forEach(replacement => {
-                    replacedName = replacedName.replace(replacement.findText, replacement.replaceWith);
+                    if(replacement)
+                        replacedName = replacedName.replace(replacement?.findText, replacement?.replaceWith);
                 });
 
                 const templateMatch = this.getTemplateMatch(template, safeName, matchString);
