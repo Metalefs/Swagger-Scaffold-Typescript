@@ -85,6 +85,7 @@ This allows you to control how request and response files are named according to
     "GET": "get",
     "POST": "create",
     "PUT": "update",
+    "PATCH": "patch",
     "DELETE": "delete"
   }
 }
