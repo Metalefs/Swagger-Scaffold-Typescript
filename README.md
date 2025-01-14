@@ -37,8 +37,7 @@
 ### Review & Finalize Scaffolded Files
 
 1. After the initial generation, **analyze the scaffolded files** to ensure they meet your project’s requirements.
-2. **move the generated `swaggerstruct-generated-templates.json` file** to the correct directory where you want the scaffolded files to be applied.
-3. Once you’ve made any necessary adjustments, open `swaggerstruct-generated-folder-structure.yaml` then **run the command** `Process Folder Structure` from the Command Palette to ensure the files are scaffolded correctly.
+2. Once you’ve made any necessary adjustments, open `swaggerstruct-generated-folder-structure.yaml` then **run the command** `Process Folder Structure` from the Command Palette to ensure the files are scaffolded correctly.
 
 
 ## Example
@@ -48,7 +47,6 @@ Given a Swagger URL, SwaggerStruct will generate:
 - `/users/`  
   - `GetUserRequest.ts`
   - `GetUserResponse.ts`
-  
 - `/posts/`  
   - `CreatePostRequest.ts`
   - `CreatePostResponse.ts`
