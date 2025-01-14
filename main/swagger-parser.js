@@ -153,13 +153,13 @@ class SwaggerParser {
     extractRequestSchema(details, swagger) {
         if(!details.requestBody) return null;
         const schema = details.requestBody?.content?.['application/json']?.schema;
-        return this.resolveSchema(schema, swagger)[0] || '';
+        return this.resolveSchema(schema, swagger) || '';
     }
     
     extractResponseSchema(details, swagger) {
         const successResponse = details.responses?.['200'] || details.responses?.['201'];
         const schema = successResponse?.content?.['application/json']?.schema;
-        return this.resolveSchema(schema, swagger)[0] || '';
+        return this.resolveSchema(schema, swagger) || '';
     }
 
     generateSchemaInterfaces(swagger) {
@@ -194,7 +194,7 @@ class SwaggerParser {
         }
         
         // If it's a direct schema, convert it to TypeScript
-        return this.schemaToTypeScript(schema, swagger);
+        return this.schemaToTypeScript(schema, swagger)[0];
     }
 
     schemaToTypeScript(schema, swagger) {
@@ -358,10 +358,11 @@ class SwaggerParser {
     
     createTemplatePattern(organized) {
         const customTemplates = [];
-        
-        for (const [folder, endpoints] of Object.entries(organized)) {
-
-            
+        let rootPath = '../..';
+        if(this.config.separateFoldersRequestAndResponse){
+            rootPath = '../../..';
+        }
+        for (const [folder, endpoints] of Object.entries(organized)) {            
             endpoints.forEach(endpoint => {
                 console.log(endpoint);
                 if(endpoint.requestBody) {
@@ -380,8 +381,8 @@ class SwaggerParser {
                         body,
                         match: `${endpoint.method.toLowerCase()}-${endpoint.path}`,
                         imports: isArray ? 
-                            `import { ${baseType} } from '../../interfaces/${baseType}';\n` : 
-                            isRef ? `import { ${endpoint.requestBody} } from "../../interfaces/${endpoint.requestBody}";\n` : '',
+                            `import { ${baseType} } from '${rootPath}/interfaces/${baseType}';\n` : 
+                            isRef ? `import { ${endpoint.requestBody} } from "${rootPath}/interfaces/${endpoint.requestBody}";\n` : '',
                         isArray
                     });
                 }
@@ -403,8 +404,8 @@ class SwaggerParser {
                         body,
                         match: `${endpoint.method.toLowerCase()}-${endpoint.path}`,
                         imports: isArray ? 
-                            `import { ${baseType} } from '../../interfaces/${baseType}';\n` : 
-                            isRef ? `import { ${endpoint.responseBody} } from "../../interfaces/${endpoint.responseBody}";\n` : '',
+                            `import { ${baseType} } from '${rootPath}/interfaces/${baseType}';\n` : 
+                            isRef ? `import { ${endpoint.responseBody} } from "${rootPath}/interfaces/${endpoint.responseBody}";\n` : '',
                         isArray
                     });
                 }

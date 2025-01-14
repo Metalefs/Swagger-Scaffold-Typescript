@@ -10,6 +10,7 @@
 - 📄 **Request/Response File Creation**: Generates request and response files for each API endpoint.
 - 🌐 **Swagger Integration**: Fetches API routes directly from a Swagger (OpenAPI) address and translates them into code.
 - 🛠 **Customizable Templates**: Generates a template file to customize the structure and content of the generated files.
+- 🛠 **Supports Enum Files with x-enumNames**: Generates files for named enums.
 - 🚀 **Fast and Easy Setup**: Quickly scaffold your projects without manually writing boilerplate code.
 
 ## Installation
