@@ -2,7 +2,7 @@
   "name": "swagger-scaffold-typescript",
   "displayName": "Swagger Scaffold Typescript",
   "description": "Quickly create complex folder structures in your VS Code projects with ease! This extension allows you to generate folder and file hierarchies using simple text input, supporting indented tree format.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "MetaBuild",
   "license": "MIT",
   "icon": "icon.png",
