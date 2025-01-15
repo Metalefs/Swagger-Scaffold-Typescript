@@ -29,18 +29,19 @@
 3. Enter the Swagger (OpenAPI) URL.
 4. The extension will generate directory structure and template files automatically based on the provided Swagger address.
 
-# Scaffolding files
-
-1. **Open Command Palette** (`Ctrl + Shift + P` or `Cmd + Shift + P` on macOS).
-2. Search for `SwaggerScaffold: Process Folder Structure`.
-3. Select the desired output folder.
-4. The extension will generate folder structures and request/response files automatically based on the provided structure and template files generated in the workspace root path.
----
-
 ### Review & Finalize Scaffolded Files
 
 1. After the initial generation, **analyze the scaffolded files** to ensure they meet your project’s requirements.
 2. Once you’ve made any necessary adjustments, open `swaggerstruct-generated-folder-structure.yaml` then **run the command** `Process Folder Structure` from the Command Palette to ensure the files are scaffolded correctly.
+
+# Scaffolding files
+
+1. With `swaggerstruct-generated-folder-structure.yaml` open.
+2. **Open Command Palette** (`Ctrl + Shift + P` or `Cmd + Shift + P` on macOS).
+3. Search for `SwaggerScaffold: Process Folder Structure`.
+4. Select the desired output folder.
+5. The extension will generate folder structures and request/response files automatically based on the provided structure and template files generated in the workspace root path.
+---
 
 
 ## Example
@@ -57,7 +58,7 @@ Given a Swagger URL, SwaggerStruct will generate:
 
 ## Configuration
 
-To fully customize file generation, you can create a `swaggerstruct.config.json` file in your project directory. This configuration file gives you control over how the generated files are named, how HTTP method-specific prefixes are applied, and what file extension to use for the scaffolded files.
+To fully customize file generation, you can create a `swaggerstruct.config.json` file in your project directory. This configuration file gives you control over how the generated files are named and how HTTP method-specific prefixes are applied for the scaffolded files.
 
 ### Available Configuration Options
 
@@ -94,7 +95,7 @@ This allows you to control how request and response files are named according to
 
 ### Explanation:
 
-- **File Name Casing**: The `fileNameCasing` is set to `PascalCase`, meaning all generated files will have names like `GetUserRequest.ts` or `CreatePostResponse.ts`.
+- **File Name Casing**: The `fileNameCasing` is set to `PascalCase`, meaning all generated files will have names like `GetUserRequest.ts` or `CreatePostResponse.ts`. (Default is KebabCase)
   
 - **HTTP Method Prefixes**: 
   - For **GET** requests, the prefix is `Get`. So, for an API route like `/users`, the generated request file will be `GetUserRequest.ts`.
@@ -113,7 +114,7 @@ When you run the SwaggerStruct command with this configuration:
 To customize file generation, change the generated `swaggerstruct-generated-templates.json` file. You can configure:
 
 1. File naming conventions.
-2. Custom content using placeholders like {{fileName}}, {{body}}, etc.
+2. Custom content using available placeholders: {{fileName}}, {{body}}, {{fileNamePascalCase}} and {{fileNameCamelCase}}.
 3. Different file templates for requests, responses, or specific endpoints.
 
 ### Example `swaggerstruct-generated-templates.json`:
@@ -134,15 +135,13 @@ To customize file generation, change the generated `swaggerstruct-generated-temp
     ]
   },
   "customTemplates": {
-    "fileName": "some-file",
-    "body": "Default body content",
-    "match": "get-/api/v1/azure",
-    "imports": "ReferenceDTO"
+    "fileName": "create-some-route.request.ts",
+    "body": "{/n}",
+    "match": "get-request-/api/v1/azure",
+    "imports": "import { ReferenceDTO } from '../interfaces'"
   }
 }
 ```
-
-
 
 ## Contribution
 

@@ -44,8 +44,6 @@ class FolderStructureGenerator {
             const name = trimmedLine.replace(/\/$/g, "");
             const [safeName, matchString] = name.split('\\');
             
-            console.log({BEFORESPLITCHAR:safeName, AFTERSPLITCHAR:matchString, FULLNAME:name, SPLIT:name.split('\\')})
-
             try {                
                 while (stack.length > 1 && stack[stack.length - 1].depth >= depth) {
                     stack.pop();
